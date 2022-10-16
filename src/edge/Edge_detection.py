@@ -7,10 +7,13 @@ import cv2
 import numpy as np
 from PIL import Image
 from mss import mss
-
-from CONFIG import *
+import os
+import sys
+parent_path = os.path.abspath(os.path.join(__file__, *(['..'] * 2)))
+sys.path.insert(0, parent_path)
+from shared.CONFIG import *
 from sendInput import PressKey, ReleaseKey, Z, Q, D
-from shared import *
+from shared.utils import *
 
 
 class EdgeDetection(object):
@@ -123,3 +126,7 @@ class EdgeDetection(object):
                 for x1, y1, x2, y2 in line:
                     cv2.line(line_image, (x1, y1), (x2, y2), (255, 0, 0), 10)
         return line_image
+
+if __name__ == '__main__':
+    EdgeDetector = EdgeDetection()
+    EdgeDetector.get_image()

@@ -1,9 +1,13 @@
 import numpy as np
 import cv2
 import os
-from CONFIG import training_dir
 import pandas as pd
 from tqdm import tqdm
+import sys
+
+parent_path = os.path.abspath(os.path.join(__file__, *(['..'] * 2)))
+sys.path.insert(0, parent_path)
+from shared.CONFIG import training_dir
 
 training_files = []
 columns = ["ID", "path", "target"]

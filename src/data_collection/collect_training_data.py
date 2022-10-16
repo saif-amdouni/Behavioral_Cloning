@@ -8,10 +8,12 @@ import cv2
 import numpy as np
 from PIL import Image
 from mss import mss
-
-from CONFIG import *
+import sys
+parent_path = os.path.abspath(os.path.join(__file__, *(['..'] * 2)))
+sys.path.insert(0, parent_path)
+from shared.CONFIG import *
 from getkeys import key_check
-from shared import countdown
+from shared.utils import countdown
 
 
 def keys2output(keys):
