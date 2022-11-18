@@ -10,7 +10,13 @@ key_map = {
 
 }
 
+target_map = {"1": "Forward",
+              "0": "Left",
+              "2": "Right"}
+
+
 # Directory #
+
 training_dir = "training"  # The folder containing training data
 notebooks_dir = "notebooks"  # the folder containing noteBooks
 models_dir = "models"  # the folder that stores trained models
@@ -34,3 +40,7 @@ minLineLength = 100
 maxLineGap = 50
 
 
+batch_size = 16
+
+IMAGE_WIDTH = 256
+IMAGE_HEIGHT = 256
